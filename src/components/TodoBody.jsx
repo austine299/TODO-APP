@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "./todo/TodoList";
 import "./Body.css";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import ModeToggle from "./ModeToggle";
 
 function TodoBody() {
@@ -10,6 +10,8 @@ function TodoBody() {
   const [err, setErr] = useState("");
   const [toggleMode, setToggleMode] = useState(false);
   // const [block, setBlock] = useState("");
+  const [all, setAll] = useState(false);
+  const [completedTodos, setCompletedTodos] = useState([]);
 
   const handleToggle = () => {
     setToggleMode(!toggleMode);
@@ -33,14 +35,30 @@ function TodoBody() {
     setInputText("");
   }
 
-  const count = items.filter((item) => item).length;
-  const completed = items.filter((item) => item).length;
+  let count = items.filter((item) => item).length;
   const total = items.length;
 
   const deleteTodo = (index) => {
     setItems(items.filter((item, i) => i !== index));
+
+    // let reducedTod = [...items];
+    // reducedTod.splice((item, i) => i !== index);
+    // setItems(reducedTod);
   };
 
+  const handlecompletedTodos = (index) => {
+    let filteredItems = items;
+
+    let updateCompleteArr = [...completedTodos];
+    updateCompleteArr.push(filteredItems);
+    setCompletedTodos(updateCompleteArr);
+    console.log((count -= 2));
+    deleteTodo(index);
+  };
+
+  const clear = () => {
+    setCompletedTodos([]);
+  };
   return (
     <div className="body" data-theme={toggleMode ? "dark" : "light"}>
       <div className="header-container">
@@ -68,21 +86,58 @@ function TodoBody() {
         </div>
         <span style={{ color: "red" }}>{err}</span>
         <ul className="item-list">
-          {items.map((todoItem, index) => (
-            <div className="text-list">
-              <li>
-                <TodoList
-                  key={index}
-                  id={index}
-                  mytext={todoItem}
-                  onClick={() => deleteTodo(index)}
-                  completed={completed}
-                />
-              </li>
-            </div>
-          ))}
+          {all === true &&
+            items.map((todoItem, index) => (
+              <div className="text-list">
+                <li>
+                  <TodoList
+                    key={index}
+                    id={index}
+                    mytext={todoItem}
+                    onChange={count}
+                    delete={() => deleteTodo(index)}
+                    onClick={handlecompletedTodos}
+                    hidechecked={all}
+                  />
+                </li>
+              </div>
+            ))}
 
-          <Footer itemsCount={count} totalTodo={total} completed={completed} />
+          {all === false &&
+            completedTodos.map((todoItem, index) => (
+              <div className="text-list">
+                <li>
+                  <TodoList
+                    key={index}
+                    id={index}
+                    mytext={todoItem}
+                    hidechecked={all}
+                  />
+                </li>
+              </div>
+            ))}
+
+          <div className="footer-container">
+            <div>{count} items left</div>
+            <div className="all">
+              <span
+                onClick={() => setAll(true)}
+                className={all === true ? "footer-active" : "none-active"}
+              >
+                All {total}
+              </span>
+              <span className="none-active">Active</span>
+              <span
+                onClick={() => setAll(false)}
+                className={all === false ? "footer-active" : "none-active"}
+              >
+                Completed{" "}
+              </span>
+            </div>
+            <div className="clear-completed none-active" onClick={clear}>
+              Clear Completed
+            </div>
+          </div>
         </ul>
       </div>
     </div>

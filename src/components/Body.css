@@ -140,20 +140,27 @@
 .footer-container .all{
     display: flex;
     gap: 1rem;
+    font-weight: bold;
 }
-.footer-container .all span {
+.footer-container .all .none-active {
     cursor: pointer;
     color: var(--nohover);
 }
 
-.footer-container .all span:hover {
+.footer-container .all .none-active:hover {
     color: var(--hover);
 }
 
 .clear-completed{
     cursor: pointer;
     color: var(--nohover);
+    font-weight: bold;
 }
 .clear-completed:hover{
     color: var(--hover);
+}
+
+.footer-active{
+    color: blue;
+    cursor: pointer;
 }

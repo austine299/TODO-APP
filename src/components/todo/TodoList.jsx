@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 function TodoList(props) {
   const [mytext, setMyText] = useState(false);
+
   function textStyle() {
-    setMyText(!mytext);
+    setMyText(true);
   }
 
   return (
@@ -15,9 +16,19 @@ function TodoList(props) {
             gap: "2rem",
           }}
         >
-          <input type="checkbox" className="checkbox" onClick={textStyle} />{" "}
+          {props.hidechecked === true ? (
+            <input
+              type="checkbox"
+              className="checkbox"
+              onClick={() => {
+                textStyle();
+                props.onClick();
+              }}
+            />
+          ) : (
+            <></>
+          )}{" "}
           <span
-            onClick={props.completed}
             style={{
               textDecoration: mytext ? "line-through" : "none",
               color: mytext
@@ -30,7 +41,7 @@ function TodoList(props) {
         </div>
       </li>
       <li className="delete">
-        <span onClick={props.onClick}>X</span>
+        <span onClick={props.delete}>X</span>
       </li>
     </div>
   );
