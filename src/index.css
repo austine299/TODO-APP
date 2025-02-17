@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --background-color:#fff;
+  --foreground_color: blue;
+  --primary-text-color: black;
+  --secondary-text-color:#fff
+}
+
+[data-theme="dark"]{
+  --background-color: black;
+  --foreground_color: ;
+  --hover:#fff;
+  --nohover:#6d6565;
+  --primary-text-color: #fff;
+  --secondary-text-color: blue;
+  --todo-list-text-color:#222020;
+  --header-color: #fff;
+  --background-image: url("../public/images/bg-desktop-dark.jpg");
+  --light-mode: none;
+  --dark-mode:block;
+}
+
+[data-theme="light"] {
+  --background-color: #fff;
+  --foreground_color: ;
+  --hover: black;
+  --nohover: #ccc;
+  --primary-text-color: black;
+  --secondary-text-color: #fff;
+  --todo-list-text-color: #ccc;
+  --header-color:#fff;
+  --background-image: url("../public/images/bg-desktop-light.jpg");
+  --light-mode: block;
+  --dark-mode: none;
+}
