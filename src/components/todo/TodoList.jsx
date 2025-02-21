@@ -36,7 +36,7 @@ function TodoList(props) {
                 : "var(--primary-text-color)",
             }}
           >
-            {props.mytext}
+            {props.Mytext}
           </span>
         </div>
       </li>

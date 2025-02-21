@@ -31,7 +31,7 @@ code {
   --background-image: url("../public/images/bg-desktop-dark.jpg");
   --light-mode: none;
   --dark-mode:block;
-}
+} 
 
 [data-theme="light"] {
   --background-color: #fff;

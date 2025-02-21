@@ -8,7 +8,7 @@ function Footer(props) {
   };
   const handleAll = () => {
     setAll(true);
-  };
+  }; 
 
   return (
     <div className="footer-container">
@@ -28,6 +28,7 @@ function Footer(props) {
       <div className="clear-completed none-active" onClick={props.clear}>
         Clear Completed
       </div>
+      <div>welcome</div>
     </div>
   );
 }

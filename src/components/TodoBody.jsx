@@ -10,7 +10,7 @@ function TodoBody() {
   const [err, setErr] = useState("");
   const [toggleMode, setToggleMode] = useState(false);
   // const [block, setBlock] = useState("");
-  const [all, setAll] = useState(false);
+  const [all, setAll] = useState(true);
   const [completedTodos, setCompletedTodos] = useState([]);
 
   const handleToggle = () => {
@@ -93,7 +93,7 @@ function TodoBody() {
                   <TodoList
                     key={index}
                     id={index}
-                    mytext={todoItem}
+                    Mytext={todoItem}
                     onChange={count}
                     delete={() => deleteTodo(index)}
                     onClick={handlecompletedTodos}
