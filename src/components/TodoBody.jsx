@@ -13,6 +13,7 @@ function TodoBody() {
   const [all, setAll] = useState(true);
   const [completedTodos, setCompletedTodos] = useState([]);
    const [selectedItem, setSelectedItem] = useState(null);
+   const [count, setCount] = useState(items.length)
 
 
   const handleToggle = () => {
@@ -27,17 +28,19 @@ function TodoBody() {
   function addItem() {
     if (inputText === "") {
       setErr("please input something here");
-    } else {
+    } else {  
       setItems((prevItems) => {
         return [...prevItems, inputText];
+        
       }); 
+      setCount(count + 1);
       setErr("");
     }
 
     setInputText("");
   }
 
-  let count = items.filter((item) => item).length;
+  // let count = items.filter((item) => item).length;
   const total = items.length;
 
   const deleteTodo = (index) => {
@@ -48,9 +51,16 @@ function TodoBody() {
     // setItems(reducedTod);
   };
 
-  const handlecompletedTodos = (todoItem) => {
+  const handlecompletedTodos = (todoItem, index) => {
     setSelectedItem(todoItem)
+    if (!completedTodos.includes(todoItem)) {
+      
     setCompletedTodos([...completedTodos, todoItem])
+    
+    setCount(count-1);
+    }else{
+      alert("item has been added already")
+    }
     
     // let filteredItems = items;
 
