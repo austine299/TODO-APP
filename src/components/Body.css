@@ -1,166 +1,352 @@
-.body{
-    background-color: var(--background-color);
-    height: 100vh;
+@media (max-width: 2000px){
+    .body{
+        background-color: var(--background-color);
+        height: 100vh;
+    }
+
+    .dark{
+        display: var(--light-mode);
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    .light {
+        display: var(--dark-mode);
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: var(--background-image);
+        background-repeat: no-repeat;
+        height: 20rem;
+        width: 100%;
+    }
+
+    .header-container div{
+        position: relative;
+        top: -5rem;color: #fff;
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--header-color);
+        font-weight: bold;
+
+
+    }
+
+    .body-content{
+        position: relative;
+        top: -10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .text-container{
+        background-color: var(--background-color);
+        color: var(--primary-text-color);
+        width: 40%;
+        height: 3rem;
+        border-radius: 10px;
+        display: flex;
+        justify-content:space-around ;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 2);
+        padding-right: 0.5rem;
+    }
+
+    .text{
+        background-color: var(--background-color);
+        width: 90%;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+
+    .item-list{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 100%;
+        background-color: var(--background-color);
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px rgba(40, 40, 40, 40);
+        padding: 0rem;
+
+    }
+
+
+
+    .item-list li{
+        list-style-type: none;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .text-list{
+        border-bottom: 1px #ccc solid;
+    }
+
+    .list-container{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 1rem;
+    }
+
+    .button-add{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .hover-triger{
+        cursor: pointer;
+    }
+
+    .checkbox{
+        cursor: pointer;
+    }
+
+    .delete{
+        display: none;
+    }
+
+    .hover-triger:hover + .delete{
+        display: block;cursor: pointer;
+        text-align: right;
+        cursor: pointer;
+        margin-right: 1.5rem;
+        width: 10%;
+        color: var(--primary-text-color);
+        font-weight: bold;
+        margin-right: 4rem;
+    }
+
+
+
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+        color: var(--primary-text-color);
+        padding: 1rem;
+        color: var(--nohover);
+    }
+    .footer-container .all{
+        display: flex;
+        gap: 1rem;
+        font-weight: bold;
+    }
+    .footer-container .all .none-active {
+        cursor: pointer;
+        color: var(--nohover);
+    }
+
+    .footer-container .all .none-active:hover {
+        color: var(--hover);
+    }
+
+    .clear-completed{
+        cursor: pointer;
+        color: var(--nohover);
+        font-weight: bold;
+    }
+    .clear-completed:hover{
+        color: var(--hover);
+    }
+
+    .footer-active{
+        color: blue;
+        cursor: pointer;
+    }
 }
 
-.dark{
-    display: var(--light-mode);
-    font-size: 2.5rem;
-    cursor: pointer;
-}
+@media(max-width:600px){
+    .body{
+        background-color: var(--background-color);
+        height: 100vh;
+    }
 
-.light {
-    display: var(--dark-mode);
-    font-size: 2.5rem;
-    cursor: pointer;
-}
+    .dark{
+        display: var(--light-mode);
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
 
-.header-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: var(--background-image);
-    background-repeat: no-repeat;
-    height: 20rem;
-    width: 100%;
-}
+    .light {
+        display: var(--dark-mode);
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
 
-.header-container div{
-    position: relative;
-    top: -5rem;color: #fff;
-    display: flex;
-    width: 40%;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--header-color);
-    font-weight: bold;
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-image: var(--background-image);
+        background-repeat: no-repeat;
+        height: 20rem;
+        width: 100%;
+        padding:0rem 5rem 0rem 5rem;
+    }
 
-
-}
-
-.body-content{
-    position: relative;
-    top: -10rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.text-container{
-    background-color: var(--background-color);
-    color: var(--primary-text-color);
-    width: 40%;
-    height: 3rem;
-    border-radius: 10px;
-    display: flex;
-    justify-content:space-around ;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 2);
-    padding-right: 0.5rem;
-}
-
-.text{
-    background-color: var(--background-color);
-    width: 90%;
-    height: 3rem;
-    border: none;
-    border-radius: 10px;
-    padding: 1rem;
-}
-
-.item-list{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    height: 100%;
-    background-color: var(--background-color);
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(40, 40, 40, 40);
-    padding: 0rem;
-
-}
+    .header-container div{
+        position: relative;
+        top: -5rem;color: #fff;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--header-color);
+        font-weight: bold;
 
 
+    }
 
-.item-list li{
-    list-style-type: none;
-    width: 100%;
-    font-weight: bold;
-}
+    .body-content{
+        position: relative;
+        top: -10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        padding:0rem 5rem 0rem 5rem;
+        gap: 1rem;
+    }
 
-.text-list{
-    border-bottom: 1px #ccc solid;
-}
+    .text-container{
+        background-color: var(--background-color);
+        color: var(--primary-text-color);
+        width: 100%;
+        height: 4rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content:space-around ;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 2);
+        padding-right: 0.5rem;
+    }
 
-.list-container{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: 1rem;
-}
+    .text{
+        background-color: var(--background-color);
+        width: 90%;
+        height: 4rem;
+        border: none;
+        border-radius: 5px;
+        padding: 1rem;
+    }
 
-.button-add{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
+    .item-list{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-color);
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px rgba(40, 40, 40, 40);
+        padding: 0rem;
 
-.hover-triger{
-    cursor: pointer;
-}
-
-.checkbox{
-    cursor: pointer;
-}
-
-.delete{
-    display: none;
-}
-
-.hover-triger:hover + .delete{
-    display: block;cursor: pointer;
-    text-align: right;
-    cursor: pointer;
-    margin-right: 1.5rem;
-    width: 10%;
-    color: var(--primary-text-color);
-    font-weight: bold;
-    margin-right: 4rem;
-}
+    }
 
 
 
-.footer-container{
-    display: flex;
-    justify-content: space-between;
-    color: var(--primary-text-color);
-    padding: 1rem;
-    color: var(--nohover);
-}
-.footer-container .all{
-    display: flex;
-    gap: 1rem;
-    font-weight: bold;
-}
-.footer-container .all .none-active {
-    cursor: pointer;
-    color: var(--nohover);
-}
+    .item-list li{
+        list-style-type: none;
+        width: 100%;
+        font-weight: bold;
+    }
 
-.footer-container .all .none-active:hover {
-    color: var(--hover);
-}
+    .text-list{
+        border-bottom: 1px #ccc solid;
+    }
 
-.clear-completed{
-    cursor: pointer;
-    color: var(--nohover);
-    font-weight: bold;
-}
-.clear-completed:hover{
-    color: var(--hover);
-}
+    .list-container{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 1rem;
+    }
 
-.footer-active{
-    color: blue;
-    cursor: pointer;
+    .button-add{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .hover-triger{
+        cursor: pointer;
+    }
+
+    .checkbox{
+        cursor: pointer;
+    }
+
+    .delete{
+        display: none;
+    }
+
+    .hover-triger:hover + .delete{
+        display: block;cursor: pointer;
+        text-align: right;
+        cursor: pointer;
+        margin-right: 1.5rem;
+        width: 10%;
+        color: var(--primary-text-color);
+        font-weight: bold;
+        margin-right: 4rem;
+    }
+
+
+
+    .footer-container{
+        position:relative;
+        display: flex;
+        justify-content: space-between;
+        color: var(--primary-text-color);
+        padding: 1rem;
+        color: var(--nohover);
+    }
+    .footer-container .all{
+        position:absolute;
+        top:6rem;
+        display: flex;
+        left:0rem;
+        width:100%;
+        height:4rem;
+        background-color: var(--background-color);
+        box-shadow: 2px 2px 2px rgba(40, 40, 40, 40);
+        border-radius: 5px;
+        justify-content:center;
+        align-items:center;
+        gap: 2rem;
+        font-weight: bold;
+    }
+    .footer-container .all .none-active {
+        cursor: pointer;
+        color: var(--nohover);
+    }
+
+    .footer-container .all .none-active:hover {
+        color: var(--hover);
+    }
+
+    .clear-completed{
+        cursor: pointer;
+        color: var(--nohover);
+        font-weight: bold;
+    }
+    .clear-completed:hover{
+        color: var(--hover);
+    }
+
+    .footer-active{
+        color: blue;
+        cursor: pointer;
+    }
 }

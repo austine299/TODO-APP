@@ -12,6 +12,8 @@ function TodoBody() {
   // const [block, setBlock] = useState("");
   const [all, setAll] = useState(true);
   const [completedTodos, setCompletedTodos] = useState([]);
+   const [selectedItem, setSelectedItem] = useState(null);
+
 
   const handleToggle = () => {
     setToggleMode(!toggleMode);
@@ -28,7 +30,7 @@ function TodoBody() {
     } else {
       setItems((prevItems) => {
         return [...prevItems, inputText];
-      });
+      }); 
       setErr("");
     }
 
@@ -46,14 +48,15 @@ function TodoBody() {
     // setItems(reducedTod);
   };
 
-  const handlecompletedTodos = (index) => {
-    let filteredItems = items;
+  const handlecompletedTodos = (todoItem) => {
+    setSelectedItem(todoItem)
+    setCompletedTodos([...completedTodos, todoItem])
+    
+    // let filteredItems = items;
 
-    let updateCompleteArr = [...completedTodos];
-    updateCompleteArr.push(filteredItems);
-    setCompletedTodos(updateCompleteArr);
-    console.log((count -= 2));
-    deleteTodo(index);
+    // let updateCompleteArr = ([...completedTodos]);
+    // updateCompleteArr.push(filteredItems);
+    // setCompletedTodos(updateCompleteArr);
   };
 
   const clear = () => {
@@ -96,7 +99,7 @@ function TodoBody() {
                     Mytext={todoItem}
                     onChange={count}
                     delete={() => deleteTodo(index)}
-                    onClick={handlecompletedTodos}
+                    onClick={() => handlecompletedTodos(todoItem)}
                     hidechecked={all}
                   />
                 </li>
@@ -110,7 +113,7 @@ function TodoBody() {
                   <TodoList
                     key={index}
                     id={index}
-                    mytext={todoItem}
+                    Mytext={todoItem}
                     hidechecked={all}
                   />
                 </li>

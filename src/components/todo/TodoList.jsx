@@ -9,7 +9,7 @@ function TodoList(props) {
 
   return (
     <div className="list-container">
-      <li className="hover-triger">
+      <li  className="hover-triger">
         <div
           style={{
             display: "flex",
@@ -18,6 +18,7 @@ function TodoList(props) {
         >
           {props.hidechecked === true ? (
             <input
+            key ={props.key}
               type="checkbox"
               className="checkbox"
               onClick={() => {
