@@ -20,8 +20,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: var(--background-image);
+        background-image: var(--desktop-background-image);
         background-repeat: no-repeat;
+        background-size:cover;
         height: 20rem;
         width: 100%;
     }
@@ -190,8 +191,9 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        background-image: var(--background-image);
+        background-image: var(--mobile-background-image);
         background-repeat: no-repeat;
+        background-size: cover;
         height: 20rem;
         width: 100%;
         padding:0rem 5rem 0rem 5rem;

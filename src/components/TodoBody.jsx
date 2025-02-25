@@ -54,20 +54,18 @@ function TodoBody() {
   const handlecompletedTodos = (todoItem, index) => {
     setSelectedItem(todoItem)
     if (!completedTodos.includes(todoItem)) {
-      
-    setCompletedTodos([...completedTodos, todoItem])
-    
-    setCount(count-1);
+        
+      setCompletedTodos([...completedTodos, todoItem])
+      if (count >= 1) {
+        setCount(count-1);
+      }
     }else{
       alert("item has been added already")
     }
     
-    // let filteredItems = items;
-
-    // let updateCompleteArr = ([...completedTodos]);
-    // updateCompleteArr.push(filteredItems);
-    // setCompletedTodos(updateCompleteArr);
   };
+
+  const totalCompletedTodo = completedTodos.length;
 
   const clear = () => {
     setCompletedTodos([]);
@@ -144,7 +142,7 @@ function TodoBody() {
                 onClick={() => setAll(false)}
                 className={all === false ? "footer-active" : "none-active"}
               >
-                Completed{" "}
+                Completed { totalCompletedTodo}
               </span>
             </div>
             <div className="clear-completed none-active" onClick={clear}>

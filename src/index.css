@@ -28,7 +28,8 @@ code {
   --secondary-text-color: blue;
   --todo-list-text-color:#222020;
   --header-color: #fff;
-  --background-image: url("../public/images/bg-desktop-dark.jpg");
+  --desktop-background-image: url("../public/images/bg-desktop-dark.jpg");
+  --mobile-background-image: url("../public/images/bg-mobile-dark.jpg");
   --light-mode: none;
   --dark-mode:block;
 } 
@@ -42,7 +43,8 @@ code {
   --secondary-text-color: #fff;
   --todo-list-text-color: #ccc;
   --header-color:#fff;
-  --background-image: url("../public/images/bg-desktop-light.jpg");
+  --desktop-background-image: url("../public/images/bg-desktop-light.jpg");
+  --mobile-background-image: url("../public/images/bg-mobile-light.jpg");
   --light-mode: block;
   --dark-mode: none;
 }
